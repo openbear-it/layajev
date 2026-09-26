@@ -13,7 +13,7 @@ WORKDIR /app
 # The PyTorch CPU index avoids downloading CUDA runtime packages on x86_64 and ARM64.
 RUN python -m pip install --upgrade pip \
     && python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.6.0 \
-    && python -m pip install laya==0.3.20
+    && python -m pip install laya==0.3.20 fastapi "uvicorn[standard]>=0.30,<1.0"
 
 COPY pyproject.toml README.md ./
 COPY src ./src
